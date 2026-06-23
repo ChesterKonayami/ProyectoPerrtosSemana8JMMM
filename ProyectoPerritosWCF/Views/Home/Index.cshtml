@@ -1,0 +1,85 @@
+﻿@model ProyectoPerritosWCF.Models.Usuario
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<!-- Título principal del sistema -->
+<div class="text-center mb-4">
+    <h1>Sistema de Consulta de Perritos</h1>
+    <p>Consumo de la API pública Dog CEO</p>
+</div>
+
+<!-- Contenedor principal -->
+<div class="row justify-content-center">
+
+    <!-- Tarjeta del Login -->
+    <div class="col-md-6">
+
+        <div class="card">
+
+            <!-- Encabezado de la tarjeta -->
+            <div class="card-header text-center">
+                <h3>Login de Acceso</h3>
+            </div>
+
+            <!-- Cuerpo de la tarjeta -->
+            <div class="card-body">
+
+                <!-- Formulario de autenticación -->
+                @using (Html.BeginForm())
+                {
+                    <!-- Campo Usuario -->
+                    <div class="mb-3 text-center">
+
+                        <label>
+                            <strong>Usuario</strong>
+                        </label>
+
+                        @Html.TextBoxFor(
+                            model => model.NombreUsuario,
+                            new
+                            {
+                                @class = "form-control mx-auto",
+                                placeholder = "Ingrese su usuario",
+                                style = "max-width:300px"
+                            })
+
+                    </div>
+
+                    <!-- Campo Contraseña -->
+                    <div class="mb-3 text-center">
+
+                        <label>
+                            <strong>Contraseña</strong>
+                        </label>
+
+                        @Html.PasswordFor(
+                            model => model.Password,
+                            new
+                            {
+                                @class = "form-control mx-auto",
+                                placeholder = "Ingrese su contraseña",
+                                style = "max-width:300px"
+                            })
+
+                    </div>
+
+                    <!-- Botón de acceso -->
+                    <div class="text-center">
+
+                        <button type="submit"
+                                class="btn btn-primary">
+                            Ingresar
+                        </button>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

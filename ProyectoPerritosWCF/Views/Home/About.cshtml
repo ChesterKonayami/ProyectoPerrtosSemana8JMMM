@@ -1,0 +1,643 @@
+﻿@{
+    ViewBag.Title = "Documentación";
+}
+
+<main aria-labelledby="title">
+
+    <h1 id="title">Documentación del Proyecto</h1>
+
+    <hr />
+
+    <br />
+    <h2>1. Descripción General</h2>
+
+    <p>
+        El presente proyecto consiste en una aplicación web desarrollada utilizando
+        ASP.NET MVC 5, C# y Windows Communication Foundation (WCF).
+    </p>
+
+    <p>
+        El sistema permite consumir la API pública Dog CEO mediante un servicio WCF,
+        el cual actúa como intermediario entre la aplicación web y la API externa.
+    </p>
+
+    <p>
+        La aplicación incorpora una pantalla de autenticación de usuarios, una capa
+        de acceso a datos para la conexión con MySQL y una arquitectura distribuida
+        basada en servicios que favorece la separación de responsabilidades.
+    </p>
+    <hr />
+
+    <br />
+    <h2>2. Objetivo del Proyecto</h2>
+
+    <p>
+        Desarrollar una aplicación web basada en el patrón MVC capaz de consumir un
+        servicio WCF para obtener información proveniente de servicios externos,
+        integrando además una base de datos MySQL para la autenticación de usuarios.
+    </p>
+
+    <p>
+        Como caso práctico se implementó el consumo de la API pública Dog CEO para
+        la obtención de imágenes aleatorias de perros.
+    </p>
+    <hr />
+
+    <br />
+    <h2>3. Tecnologías Utilizadas</h2>
+
+    <ul>
+        <li>ASP.NET MVC 5</li>
+        <li>Lenguaje C#</li>
+        <li>Bootstrap</li>
+        <li>MySQL</li>
+        <li>Newtonsoft.Json</li>
+        <li>Dog CEO API</li>
+        <li>Visual Studio</li>
+        <li>Windows Communication Foundation (WCF)</li>
+    </ul>
+
+    <hr />
+
+    <br />
+    <h2>4. Arquitectura del Proyecto</h2>
+
+    <p>
+        El sistema fue desarrollado siguiendo el patrón de arquitectura
+        Modelo - Vista - Controlador (MVC), permitiendo una separación
+        clara de responsabilidades.
+    </p>
+
+    <h3>Models</h3>
+
+    <p>
+        Contiene las clases utilizadas para representar la información
+        manejada por el sistema.
+    </p>
+
+    <ul>
+        <li><strong>Usuario:</strong> almacena los datos de autenticación.</li>
+        <li><strong>DogApiResponse:</strong> representa la respuesta JSON de la API.</li>
+    </ul>
+
+    <h3>Controllers</h3>
+
+    <p>
+        Contiene la lógica de navegación y comunicación entre las vistas
+        y los modelos.
+    </p>
+
+    <ul>
+        <li><strong>HomeController:</strong> controlador principal del proyecto.</li>
+    </ul>
+
+    <h3>Views</h3>
+
+    <p>
+        Contiene las interfaces gráficas visibles para el usuario.
+    </p>
+
+    <ul>
+        <li><strong>Index:</strong> pantalla de Login.</li>
+        <li><strong>Perritos:</strong> visualización de imágenes obtenidas desde la API.</li>
+        <li><strong>About:</strong> documentación técnica del proyecto.</li>
+    </ul>
+
+    <h3>Services</h3>
+
+    <p>
+        Contiene la lógica encargada de consumir servicios externos.
+    </p>
+
+    <ul>
+        <li><strong>DogService:</strong> realiza las peticiones HTTP hacia la API Dog CEO.</li>
+    </ul>
+
+    <h3>Data</h3>
+
+    <p>
+        Contiene la lógica de acceso a datos y conexión con MySQL.
+    </p>
+
+    <ul>
+        <li><strong>ConexionBD:</strong> administra la conexión y validación de usuarios.</li>
+    </ul>
+
+    <h3>Servicio WCF</h3>
+
+    <p>
+        Se desarrolló un servicio WCF independiente encargado de realizar el
+        consumo de la API Dog CEO.
+    </p>
+
+    <ul>
+        <li><strong>IDogService:</strong> contrato del servicio.</li>
+        <li><strong>DogService:</strong> implementación del servicio.</li>
+    </ul>
+
+    <hr />
+
+    <br />
+    <h2>5. Diagrama de Flujo General del Sistema</h2>
+
+    <p>
+        El siguiente diagrama representa el flujo general de funcionamiento
+        de la aplicación.
+    </p>
+
+    <pre>
+INICIO
+   │
+   ▼
+Pantalla Login
+   │
+   ▼
+Validar Usuario
+   │
+   ├── Correcto
+   │        │
+   │        ▼
+   │   Pantalla Perritos
+   │        │
+   │        ▼
+   │    MVC
+   │        │
+   │        ▼
+   │    Servicio WCF
+   │        │
+   │        ▼
+   │    API Dog CEO
+   │        │
+   │        ▼
+   │    JSON
+   │        │
+   │        ▼
+   │    WCF
+   │        │
+   │        ▼
+   │    MVC
+   │        │
+   │        ▼
+   │ Mostrar Imagen
+   │
+   └── Incorrecto
+            │
+            ▼
+      Mostrar Error
+</pre>
+
+    <hr />
+
+    <br />
+    <h2>6. Flujo de Consumo de la API</h2>
+
+    <p>
+        El sistema utiliza una arquitectura por capas para consumir la API
+        pública Dog CEO.
+    </p>
+
+    <pre>
+HomeController (MVC)
+        │
+        ▼
+DogServiceClient
+        │
+        ▼
+Servicio WCF
+        │
+        ▼
+DogService
+        │
+        ▼
+WebClient
+        │
+        ▼
+Dog CEO API
+        │
+        ▼
+JSON
+        │
+        ▼
+Servicio WCF
+        │
+        ▼
+MVC
+        │
+        ▼
+DogApiResponse
+        │
+        ▼
+Vista Perritos
+</pre>
+
+    <p>
+        Esta estructura permite separar la lógica de negocio de la interfaz
+        gráfica, facilitando el mantenimiento y la reutilización del código.
+    </p>
+
+    <hr />
+
+    <br />
+    <h2>7. API Utilizada</h2>
+
+    <p>
+        Para la obtención de imágenes aleatorias se utilizó la API pública:
+    </p>
+
+    <p>
+        <strong>Dog CEO API</strong>
+    </p>
+
+    <p>
+        Endpoint utilizado:
+    </p>
+
+    <code>
+        https://dog.ceo/api/breeds/image/random
+    </code>
+
+    <p>
+        Tipo de petición:
+    </p>
+
+    <ul>
+        <li>GET</li>
+    </ul>
+
+    <p>
+        Ejemplo de respuesta:
+    </p>
+
+<pre>
+{
+    "message": "https://images.dog.ceo/breeds/...",
+    "status": "success"
+}
+</pre>
+
+    <p>
+        Donde:
+    </p>
+
+    <ul>
+        <li>
+            <strong>message:</strong>
+            contiene la dirección URL de la imagen obtenida.
+        </li>
+
+        <li>
+            <strong>status:</strong>
+            indica si la operación fue exitosa.
+        </li>
+    </ul>
+
+    <hr />
+
+    <br />
+    <h2>8. Procesamiento de la Respuesta JSON</h2>
+
+    <p>
+        La respuesta obtenida desde la API es recibida inicialmente como una
+        cadena de texto en formato JSON.
+    </p>
+
+    <p>
+        Posteriormente se utiliza la librería Newtonsoft.Json para convertir
+        dicha respuesta en un objeto de tipo DogApiResponse mediante el
+        proceso conocido como deserialización.
+    </p>
+
+<pre>
+JSON
+  │
+  ▼
+DeserializeObject()
+  │
+  ▼
+DogApiResponse
+  │
+  ├── Message
+  └── Status
+</pre>
+
+    <p>
+        Una vez convertido a objeto, la información puede utilizarse
+        directamente dentro de las vistas del proyecto.
+    </p>
+
+    <hr />
+
+    <br />
+    <h2>9. Base de Datos</h2>
+
+    <p>
+        El sistema fue diseñado para trabajar con una base de datos MySQL
+        encargada de almacenar las credenciales de acceso de los usuarios.
+    </p>
+
+    <p>
+        La comunicación con el servidor de base de datos se realiza mediante
+        la librería MySql.Data y la clase ConexionBD desarrollada dentro del
+        proyecto.
+    </p>
+
+    <p>
+        La tabla utilizada para la autenticación de usuarios es:
+    </p>
+
+    <ul>
+        <li><strong>TBL_LOGIN_JMMM</strong></li>
+    </ul>
+
+    <p>
+        Los campos principales utilizados son:
+    </p>
+
+    <ul>
+        <li><strong>IdUsuario</strong></li>
+        <li><strong>NombreUsuario</strong></li>
+        <li><strong>Password</strong></li>
+    </ul>
+
+    <p>
+        La validación de credenciales se realiza mediante una consulta SQL
+        que compara el usuario y contraseña ingresados contra los registros
+        almacenados en la base de datos.
+    </p>
+
+    <hr />
+
+    <br />
+    <h2>10. Clases Principales del Proyecto</h2>
+
+    <h3>Usuario</h3>
+
+    <p>
+        Representa la información utilizada durante el proceso de
+        autenticación.
+    </p>
+
+    <ul>
+        <li>IdUsuario</li>
+        <li>NombreUsuario</li>
+        <li>Password</li>
+    </ul>
+
+    <h3>DogApiResponse</h3>
+
+    <p>
+        Representa la estructura de la respuesta JSON enviada por la API
+        Dog CEO.
+    </p>
+
+    <ul>
+        <li>Message</li>
+        <li>Status</li>
+    </ul>
+
+    <h3>DogService</h3>
+
+    <p>
+        Clase encargada de realizar las peticiones HTTP hacia la API externa,
+        recibir la respuesta JSON y convertirla en objetos utilizables por el
+        sistema.
+    </p>
+
+    <h3>ConexionBD</h3>
+
+    <p>
+        Clase responsable de administrar la conexión con MySQL y ejecutar las
+        operaciones relacionadas con la autenticación de usuarios.
+    </p>
+
+    <h3>HomeController</h3>
+
+    <p>
+        Controlador principal encargado de gestionar la navegación entre las
+        vistas Login, Documentación y Perritos.
+    </p>
+
+    <h3>IDogService</h3>
+
+    <p>
+        Define el contrato del servicio WCF y expone la operación
+        ObtenerImagenAleatoriaPerro().
+    </p>
+
+    <h3>DogService (WCF)</h3>
+
+    <p>
+        Implementa el contrato IDogService y realiza el consumo de la API
+        Dog CEO.
+    </p>
+
+    <h3>DogServiceClient</h3>
+
+    <p>
+        Proxy generado automáticamente por Visual Studio para permitir la
+        comunicación entre el proyecto MVC y el servicio WCF.
+    </p>
+
+    <hr />
+
+    <br />
+    <h2>11. Implementación del Servicio WCF</h2>
+
+    <p>
+        Como parte del desarrollo del proyecto se implementó un servicio
+        Windows Communication Foundation (WCF) con el objetivo de separar
+        la lógica de consumo de servicios externos de la aplicación MVC.
+    </p>
+
+    <p>
+        El servicio WCF actúa como una capa intermedia entre la aplicación
+        web y la API pública Dog CEO, permitiendo centralizar las operaciones
+        de comunicación HTTP y facilitando futuras modificaciones o ampliaciones
+        del sistema.
+    </p>
+
+    <h3>Estructura del Servicio</h3>
+
+    <p>
+        El servicio fue desarrollado mediante dos componentes principales:
+    </p>
+
+    <ul>
+        <li>
+            <strong>IDogService:</strong>
+            define el contrato del servicio y las operaciones disponibles.
+        </li>
+
+        <li>
+            <strong>DogService:</strong>
+            implementa la lógica necesaria para consumir la API Dog CEO.
+        </li>
+
+    </ul>
+
+    <h3>Configuración del Endpoint WCF</h3>
+
+    <p>
+        La comunicación entre el proyecto ASP.NET MVC y el servicio WCF se
+        configuró mediante un endpoint utilizando el binding
+        <strong>basicHttpBinding</strong>.
+    </p>
+
+    <p>
+        Esta configuración fue generada automáticamente por Visual Studio al
+        crear la referencia de servicio dentro del proyecto MVC.
+    </p>
+
+    <p>
+        Fragmento de configuración utilizado:
+    </p>
+
+<pre>
+&lt;endpoint
+    address="http://localhost:8733/Design_Time_Addresses/ProyectoPerritosServicioWCF/DogService/"
+    binding="basicHttpBinding"
+    bindingConfiguration="BasicHttpBinding_IDogService"
+    contract="DogServiceReference.IDogService"
+    name="BasicHttpBinding_IDogService" /&gt;
+</pre>
+
+    <p>
+        Donde:
+    </p>
+
+    <ul>
+        <li>
+            <strong>address:</strong>
+            dirección donde se encuentra publicado el servicio WCF.
+        </li>
+
+        <li>
+            <strong>binding:</strong>
+            mecanismo de comunicación utilizado entre cliente y servicio.
+            En este proyecto se empleó <strong>basicHttpBinding</strong>.
+        </li>
+
+        <li>
+            <strong>contract:</strong>
+            interfaz utilizada para exponer las operaciones disponibles
+            del servicio.
+        </li>
+
+        <li>
+            <strong>name:</strong>
+            identificador del endpoint dentro de la configuración.
+        </li>
+
+
+    </ul>
+
+
+    <h3>Funcionamiento</h3>
+
+    <p>
+        Cuando el usuario accede a la pantalla de Perritos, el controlador
+        HomeController crea una instancia del proxy generado automáticamente
+        por Visual Studio denominado DogServiceClient.
+    </p>
+
+    <p>
+        Posteriormente se invoca la operación
+        ObtenerImagenAleatoriaPerro(), la cual envía la solicitud al
+        servicio WCF.
+    </p>
+
+    <p>
+        El servicio consume la API pública Dog CEO utilizando la clase
+        WebClient, obtiene la respuesta JSON y la devuelve al proyecto MVC.
+    </p>
+
+    <p>
+        Finalmente, el proyecto MVC deserializa la información recibida
+        y la presenta al usuario mediante la vista Perritos.
+    </p>
+
+    <h3>Ventajas de la Implementación</h3>
+
+    <ul>
+        <li>Separación de responsabilidades.</li>
+        <li>Mayor organización del código fuente.</li>
+        <li>Facilidad para reutilizar servicios en otras aplicaciones.</li>
+        <li>Escalabilidad para futuras funcionalidades.</li>
+        <li>Mantenimiento simplificado de la lógica de negocio.</li>
+    </ul>
+
+    <h3>Flujo de Comunicación</h3>
+
+<pre>
+Usuario
+   │
+   ▼
+Aplicación MVC
+   │
+   ▼
+DogServiceClient
+   │
+   ▼
+Servicio WCF
+   │
+   ▼
+API Dog CEO
+   │
+   ▼
+Respuesta JSON
+   │
+   ▼
+Servicio WCF
+   │
+   ▼
+Aplicación MVC
+   │
+   ▼
+Vista Perritos
+</pre>
+    <hr />
+
+    <br />
+    <h2>12. Conclusiones</h2>
+
+    <p>
+        Se desarrolló una aplicación web utilizando ASP.NET MVC y Windows
+        Communication Foundation (WCF), integrando múltiples tecnologías
+        dentro de una misma solución.
+    </p>
+
+    <p>
+        La implementación del patrón Modelo - Vista - Controlador permitió
+        mantener una adecuada separación entre la interfaz gráfica, la lógica
+        de negocio y la administración de datos.
+    </p>
+
+    <p>
+        Asimismo, la incorporación de un servicio WCF permitió desacoplar
+        la lógica de consumo de servicios externos, estableciendo una
+        arquitectura más organizada, escalable y fácil de mantener.
+    </p>
+
+    <p>
+        El sistema fue capaz de consumir exitosamente la API pública Dog CEO,
+        procesar respuestas en formato JSON y presentar dinámicamente la
+        información al usuario mediante una interfaz web.
+    </p>
+
+    <p>
+        Durante el desarrollo se aplicaron conceptos de Programación Orientada
+        a Objetos, servicios distribuidos, consumo de APIs REST, serialización
+        y deserialización de datos, así como el uso de patrones de arquitectura
+        empresarial ampliamente utilizados en el ámbito profesional.
+    </p>
+
+    <p>
+        La estructura implementada permite incorporar futuras mejoras, como
+        la autenticación completa mediante base de datos MySQL, el registro
+        de usuarios, nuevas operaciones dentro del servicio WCF y la integración
+        con otros servicios externos.
+    </p>
+
+
+</main>
+

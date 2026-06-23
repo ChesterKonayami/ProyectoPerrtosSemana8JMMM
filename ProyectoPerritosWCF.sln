@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37411.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoPerritosWCF", "ProyectoPerritosWCF\ProyectoPerritosWCF.csproj", "{3FA6536A-562E-4B62-97BB-C5015E5D2E90}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D757F82C-6FAB-45CB-8D1D-D1D0D8A8F213} = {D757F82C-6FAB-45CB-8D1D-D1D0D8A8F213}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoPerritosServicioWCF", "ProyectoPerritosServicioWCF\ProyectoPerritosServicioWCF.csproj", "{D757F82C-6FAB-45CB-8D1D-D1D0D8A8F213}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FA6536A-562E-4B62-97BB-C5015E5D2E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA6536A-562E-4B62-97BB-C5015E5D2E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FA6536A-562E-4B62-97BB-C5015E5D2E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FA6536A-562E-4B62-97BB-C5015E5D2E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D757F82C-6FAB-45CB-8D1D-D1D0D8A8F213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D757F82C-6FAB-45CB-8D1D-D1D0D8A8F213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D757F82C-6FAB-45CB-8D1D-D1D0D8A8F213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D757F82C-6FAB-45CB-8D1D-D1D0D8A8F213}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B60CD647-E2B4-4A28-8B70-E869F56A2A6B}
+	EndGlobalSection
+EndGlobal

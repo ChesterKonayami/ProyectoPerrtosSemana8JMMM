@@ -1,0 +1,84 @@
+﻿using Newtonsoft.Json;
+using ProyectoPerritosWCF.Data;
+using ProyectoPerritosWCF.DogServiceReference;
+using ProyectoPerritosWCF.Models;
+using ProyectoPerritosWCF.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace ProyectoPerritosWCF.Controllers
+{
+    public class HomeController : Controller
+    {
+        /// Muestra la pantalla de Login.
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        /// Recibe los datos enviados desde el formulario Login.
+        [HttpPost]
+        public ActionResult Index(Usuario usuario)
+        {
+            /*
+            ConexionBD conexion = new ConexionBD();
+
+            bool usuarioValido =
+                conexion.ValidarUsuario(
+                    usuario.NombreUsuario,
+                    usuario.Password);
+
+            if (usuarioValido)
+            {
+                return RedirectToAction("Perritos");
+            }
+
+            ViewBag.MensajeError =
+                "Usuario o contraseña incorrectos.";
+
+            return View();
+            */
+
+            // IMPLEMENTACIÓN TEMPORAL
+            return RedirectToAction("Perritos");
+        }
+
+        /// Vista de documentación del proyecto.
+        public ActionResult About()
+        {
+            ViewBag.Message = "Documentación del proyecto.";
+
+            return View();
+        }
+
+
+        /// Vista de contacto (plantilla MVC).
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        /// Pantalla que consume la API Dog CEO
+        /// y muestra una imagen aleatoria de perro.
+        public ActionResult Perritos()
+        {
+            DogServiceClient cliente =
+                new DogServiceClient();
+
+            string respuestaJson =
+                cliente.ObtenerImagenAleatoriaPerro();
+
+            DogApiResponse perro =
+                JsonConvert.DeserializeObject<DogApiResponse>(
+                    respuestaJson);
+
+            return View(perro);
+        }
+    }
+}

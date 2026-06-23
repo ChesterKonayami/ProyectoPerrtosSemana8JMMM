@@ -1,0 +1,24 @@
+﻿@model ProyectoPerritosWCF.Models.DogApiResponse
+
+@{
+    ViewBag.Title = "Perritos";
+}
+
+<h2>Perritos</h2>
+
+<p><strong>Status:</strong> @Model.Status</p>
+
+<p><strong>URL:</strong> @Model.Message</p>
+
+<form method="get" action="/Home/Perritos">
+    <button type="submit">
+        ¿Obtener otro perrito?
+    </button>
+</form>
+
+<br />
+
+<img src="@Model.Message"
+     alt="Imagen de perro"
+     style="max-width:500px;" />
+

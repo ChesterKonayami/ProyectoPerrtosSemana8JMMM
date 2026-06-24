@@ -14,12 +14,12 @@ namespace ProyectoPerritosWCF.Data
     {
         // Cadena de conexión al servidor MySQL
         private string cadenaConexion =
-        "Server=;" +
-        "Port=;" +
-        "Database=;" +
-        "Uid=;" +
-        "Pwd=";
-         
+         "Server=;" +
+         "Port=;" +
+         "Database=;" +
+         "Uid=;" +
+         "Pwd=";
+
         // Método que devuelve una conexión
         public MySqlConnection ObtenerConexion()
         {

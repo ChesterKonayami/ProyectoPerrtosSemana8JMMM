@@ -1,4 +1,8 @@
-﻿using ProyectoPerritosWCF.Models;
+﻿/// SEMANA 8
+/// JOSEPH MAURICIO MONDRAGON MORENO
+/// SISTEMAS COMPUTACIONALES
+
+using ProyectoPerritosWCF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

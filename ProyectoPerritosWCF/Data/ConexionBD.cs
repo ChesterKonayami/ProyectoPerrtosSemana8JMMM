@@ -1,4 +1,4 @@
-﻿// SEMANA 7
+﻿// SEMANA 8
 // JOSEPH MAURICIO MONDRAGON MORENO
 // SISTEMAS COMPUTACIONALES 
 
@@ -14,10 +14,10 @@ namespace ProyectoPerritosWCF.Data
     {
         // Cadena de conexión al servidor MySQL
         private string cadenaConexion =
-         "Server=;" +
-         "Port=;" +
-         "Database=;" +
-         "Uid=;" +
+         "Server=" +
+         "Port=" +
+         "Database=admin_3;" +
+         "Uid=cizcalli_3;" +
          "Pwd=";
 
         // Método que devuelve una conexión

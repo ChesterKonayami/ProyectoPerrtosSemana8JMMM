@@ -1,4 +1,8 @@
-﻿using System.ServiceModel;
+﻿/// SEMANA 8
+/// JOSEPH MAURICIO MONDRAGON MORENO
+/// SISTEMAS COMPUTACIONALES
+
+using System.ServiceModel;
 
 namespace ProyectoPerritosServicioWCF
 {

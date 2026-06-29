@@ -1,4 +1,4 @@
-﻿<!--SEMANA 7
+﻿<!--SEMANA 8
 JOSEPH MAURICIO MONDRAGON MORENO
 SISTEMAS COMPUTACIONALES-->
 
@@ -8,21 +8,54 @@ SISTEMAS COMPUTACIONALES-->
     ViewBag.Title = "Perritos";
 }
 
-<h2>Perritos</h2>
+<!-- Título principal de la página -->
+<h1>El consentido de hoy es...</h1>
+<br/>
 
-<p><strong>Status:</strong> @Model.Status</p>
+<!-- Estado devuelto por la API -->
+<h4><strong>Status:</strong> @Model.Status</h4>
+<br/>
 
-<p><strong>URL:</strong> @Model.Message</p>
+<!-- URL de la imagen obtenida desde Dog CEO -->
+<h4><strong>URL:</strong> @Model.Message</h4>
+<br />
 
+<!-- Botón para consumir nuevamente la API -->
 <form method="get" action="/Home/Perritos">
     <button type="submit">
-        ¿Obtener otro perrito?
+        ¿Otro perrito?
     </button>
 </form>
 
 <br />
 
-<img src="@Model.Message"
-     alt="Imagen de perro"
-     style="max-width:500px;" />
+<!--
+    Contenedor principal de imágenes.
+      
+-->
+<div style="display:flex; align-items:center; gap:30px; margin-top:20px;">
 
+    <!--
+        Imagen obtenida dinámicamente desde la API Dog CEO.
+       
+    -->
+    <img src="@Model.Message"
+         alt="Imagen de perro"
+         style="width:500px;
+                height:500px;
+                object-fit:contain;
+                border:1px solid #ccc;" />
+
+    <!--
+        Imagen estática de Raikou.
+
+        -->
+    <img src="~/Raikou.png"
+         alt="Raikou"
+         style="width:450px;
+                height:450px;
+                object-fit:contain;
+                margin-left:10px;
+                margin-top:-350px;" />
+
+</div>

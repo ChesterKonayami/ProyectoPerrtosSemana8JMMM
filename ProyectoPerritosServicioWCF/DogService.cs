@@ -1,4 +1,8 @@
-﻿using System.Net;
+﻿/// SEMANA 8
+/// JOSEPH MAURICIO MONDRAGON MORENO
+/// SISTEMAS COMPUTACIONALES
+
+using System.Net;
 
 namespace ProyectoPerritosServicioWCF
 {

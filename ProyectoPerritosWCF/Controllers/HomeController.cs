@@ -1,4 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿/// SEMANA 8
+/// JOSEPH MAURICIO MONDRAGON MORENO
+/// SISTEMAS COMPUTACIONALES
+
+using Newtonsoft.Json;
 using ProyectoPerritosWCF.Data;
 using ProyectoPerritosWCF.DogServiceReference;
 using ProyectoPerritosWCF.Models;

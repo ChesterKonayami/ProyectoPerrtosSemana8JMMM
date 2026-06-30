@@ -9,7 +9,7 @@ SISTEMAS COMPUTACIONALES-->
 }
 
 <!-- Título principal de la página -->
-<h1>El consentido de hoy es...</h1>
+<h1>¡Este es el perrito del día!</h1>
 <br/>
 
 <!-- Estado devuelto por la API -->
@@ -22,7 +22,7 @@ SISTEMAS COMPUTACIONALES-->
 
 <!-- Botón para consumir nuevamente la API -->
 <form method="get" action="/Home/Perritos">
-    <button type="submit">
+    <button type="submit" class="btn btn-primary btn-perrito">
         ¿Otro perrito?
     </button>
 </form>
@@ -33,18 +33,14 @@ SISTEMAS COMPUTACIONALES-->
     Contenedor principal de imágenes.
       
 -->
-<div style="display:flex; align-items:center; gap:30px; margin-top:20px;">
-
+<div class="contenedor-imagenes">
     <!--
         Imagen obtenida dinámicamente desde la API Dog CEO.
-       
+
     -->
     <img src="@Model.Message"
          alt="Imagen de perro"
-         style="width:500px;
-                height:500px;
-                object-fit:contain;
-                border:1px solid #ccc;" />
+         class="imagen-perrito" />
 
     <!--
         Imagen estática de Raikou.
@@ -52,10 +48,6 @@ SISTEMAS COMPUTACIONALES-->
         -->
     <img src="~/Raikou.png"
          alt="Raikou"
-         style="width:450px;
-                height:450px;
-                object-fit:contain;
-                margin-left:10px;
-                margin-top:-350px;" />
+         class="imagen-raikou" />
 
 </div>
